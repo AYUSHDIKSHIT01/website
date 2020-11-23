@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+javascript
+        </title>
+        <link  rel="stylesheet" href="learner.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+        
+ </head>
+
+
+
+ <input id="kl" type="text" placeholder="enter something" onkeyup="get()">
+
+    <body>
+        
+    
+    <div id="abc">
+        <p><a>ayush dikshit is a webdeveloper. He has passion to develop websites.</a></p>
+    <p><a>atul yadav java developer</a></p>
+    <p><a>mayank yadav my best friend</a></p>
+  
+    <p><a>manish is placed in infosys</a></p>
+ 
+
+</div>
+    
+        </body>
+    
+     
+
+    <script type="text/javascript">
+
+
+function get()
+{
+let filter =document.getElementById("kl").value.toUpperCase();
+let div=document.getElementById("abc");
+let p=div.getElementsByTagName('p');
+for(var i=0;i<p.length;i++)
+{
+    let a=p[i].getElementsByTagName('a')[0];
+    let textValue= a.textContent || a.innerHTML;
+if(textValue.toUpperCase().indexOf(filter)>-1)
+{
+p[i].style.display='';
+}
+else
+{
+    p[i].style.display='none';
+
+}
+}
+}
+
+                </script>
+
+                
+                
+                
+                
+                
+                
+                
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" type="text/javascript" ></script>
+<script src="jqueryui/jquery-ui.js" type="text/javascript"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="jqueryf.js" type="text/javascript"></script>
+
+</html>

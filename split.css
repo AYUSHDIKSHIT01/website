@@ -1,0 +1,43 @@
+
+section{
+
+	height: 600px;
+	display: flex;
+}
+
+section .screen{
+
+	flex-grow: 1;
+	display: flex;
+	
+	align-items: center;
+	transition: 1s;
+	overflow: hidden;
+}
+section .screen:hover{
+	flex-grow: 4;
+}
+section .screen:nth-child(2){
+	background: #bf4747;
+}
+section .screen:nth-child(1){
+	background: #699b1a;
+}
+section .screen:nth-child(3){
+	background: #1a239b;
+}
+section .screen:nth-child(4){
+	background: #abb60e;
+}
+section .screen .card .imgBox{
+	max-width: 200px;
+	max-height: 200px;
+overflow: hidden;
+	
+}
+
+
+.content{
+	position: absolute;
+	word-wrap: break-word;
+}

@@ -1,0 +1,51 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  
+<script src="jquery.js" type="text/javascript"></script>
+<script src="boot/js/jquery.js" type="text/javascript"></script>
+<script src="jqueryui/jquery-ui.js" type="text/javascript"></script>    
+<script src="boot/js/bootstrap.min.js"></script>     
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+  <div id="navbar"><span>Red Stapler - Geolocation API</span></div>
+  <div id="wrapper">
+    <button id="location-button">Get User Location</button>
+    <p id="abc"></p>
+    <div id="output"></div>
+  </div>
+  
+
+
+
+
+    
+    <script>
+            $('#location-button').click(function(){
+          
+              if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position){
+                    console.log(position);
+                    $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
+                      console.log(data);
+                    })
+                    var img = new Image();
+                    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=13&size=800x400&sensor=false";
+                    $('#output').html(img);
+                  });
+                  
+              }
+  
+            });
+    </script>
+
+
+
+
+
+  </body>
+</html>

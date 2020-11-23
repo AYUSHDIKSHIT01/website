@@ -1,0 +1,44 @@
+
+body{
+    background-color: brown;
+}
+
+.card-body{
+    background-color: rgb(43, 39, 39);
+padding: 2px;
+}
+
+.card-header{
+    background-color: rgb(48, 178, 196);
+padding: 1px;
+}
+
+h2{
+    font-family: monospace;
+    background-color: rgb(255, 255, 255);
+}
+
+
+ul{
+    background-color: rgb(0, 0, 0);
+padding: 1px;
+}
+div{
+        background-color: rgb(0, 0, 0);
+    padding: 1px;
+    
+}
+#container{
+    text-align: center;
+    align-items: center;
+}
+#carouselExampleControls{
+    width: 700px;
+align-items: center;
+left: 300px;
+}
+
+
+.ic{
+    padding: 8px;
+}

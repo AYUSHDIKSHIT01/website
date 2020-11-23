@@ -1,0 +1,54 @@
+.qwe
+{
+
+background-color: rgb(16, 183, 224);
+margin: 5;
+padding: 1;
+border: 5px solid rgb(42, 8, 235);
+
+}
+.qa{
+background-color: crimson;
+width:30px ;
+height:30px;
+border: solid black;
+margin: 1px;
+    padding: 5px;  
+text-align: center;
+}
+h2{
+    text-align: center;;
+}
+#abcd
+{
+text-decoration-color: darkcyan;
+padding: 1px;
+border: solid black;
+    background-color: rgb(245, 241, 31);
+}
+
+#mn{
+   
+    position: absolute;
+
+height:200px;
+width:200px;
+}
+.csq
+{
+   
+    border: 5px solid rgb(186, 233, 17);
+    background-color: rgb(221, 109, 17);
+}
+
+
+.gh{ border-radius:15% ;}
+
+p
+{
+    text-align: center;
+}
+
+.but{
+    background-color: blue;
+}

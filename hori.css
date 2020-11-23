@@ -1,0 +1,44 @@
+
+.box div{
+    border:solid maroon;
+color: crimson;
+background-color: rgb(8, 170, 21);
+text-align: center;
+width: 200px;
+height: 200px;
+font-style: italic;
+overflow-wrap: break-word;
+}
+.box{
+overflow-y:none ;
+overflow-x: scroll;
+white-space: nowrap;
+}
+.box::-webkit-scrollbar{
+  
+}
+
+#qwe{
+ word-wrap: normal;
+    display: inline-block;
+}
+
+#rty{
+    display: inline-block;
+}
+
+
+#uio{
+    display: inline-block;
+}
+
+
+#asd{
+    display: inline-block;
+}
+
+
+#fgh{
+    display: inline-block;
+}
+

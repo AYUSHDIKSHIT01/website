@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="jqueryui/jquery-ui.css">
+<link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+<link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+
+
+    </head>
+    <body>
+<div>
+public class{<br>  
+public static void main(String[] args)
+<br>{
+    <br>int[] arr={10,20,30,40};
+    <br>for(int i=0;i;arr.length;i++)
+    <br>{
+        <br>System.out.println(arr.length+" "+arr[i]);
+        <br>    }
+          <br>  }
+          <br>  }
+
+</div>
+
+
+
+
+
+<div>
+    import java.lang.*;
+import java.math.*;
+public class dp5 {
+
+	public static void main(String[] args) {
+String a="abcdtyefg";
+String b="abcdefgh";
+int l1=a.length();
+int l2=b.length();
+lcs(a,b,l1,l2);
+}
+
+
+
+static void lcs(String a,String b,int l1,int l2)
+{
+ int[][] dp=new int[l1+1][l2+1];
+
+for(int i=0;i&LT;l1;i++)
+{
+dp[i][0]=0;
+}
+
+for(int j=0;jl2;j++)
+{
+dp[0][j]=0;
+}
+
+
+
+for(int i=1;i<=l1;i++)
+{
+for(int j=1;j<=l2;j++)
+{
+if(a.charAt(i-1)==b.charAt(j-1))
+{
+dp[i][j]=1+dp[i-1][j-1];
+}
+else
+{
+	dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
+	
+}
+
+
+}}
+
+System.out.println(dp[l1][l2]);
+
+}
+	
+}
+</div>
+
+    </body>
+
+
+
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jqueryui/jquery-ui.js" type="text/javascript"></script>  
+    </html>

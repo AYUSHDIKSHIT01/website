@@ -1,0 +1,1657 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"aa0a53fc69",applicationID:"257384380"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQW25Z');</script>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<script type="text/javascript">
+      var browserAgfent=window.navigator.userAgent;
+      var messageType=window.location.href;
+ </script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticmb.com/cssGroup/homeGroup.css?04202020.120417"/>
+<meta property="og:title" content="MagicBricks"/>
+<meta name="apple-itunes-app" content="app-id=486328406">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content='https://www.magicbricks.com/bricks/property-for-sale-rent-in-New Delhi/pg-hostels-New Delhi'/>
+<meta property="og:image" content="https://cdn.staticmb.com/images/FB_banner4.3.jpg"/>
+<meta property="og:site_name" content="Magicbricks"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Property in New Delhi | Real Estate in New Delhi | MagicBricks</title>
+<meta name="description" content="Search Real Estate in New Delhi - Buy, Sell and Rent Best Residential Properties in New Delhi by Real Property owners, Dealers, Builders and Real Estate Agents."/>
+<meta name="keywords" content="Property in New Delhi, Real Estate in New Delhi, Residential Property in New Delhi, New Delhi Properties"/>
+<meta name="Owner" content="MagicBricks.com"/>
+<meta name="Copyright" content="MagicBricks.com"/>
+<meta name="classification" content="Real Estate Property Search"/>
+<meta name="distribution" content="India"/>
+<meta name="rating" content="General"/>
+<meta name="subject" content="Search Property for Sale And Rent, Search New	Projects, Builders And Property Dealers in India"/>
+<meta name="audience" content="All"/>
+<style type="text/css">
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('https://cdn.staticmb.com/font/opensans-regular-webfont.eot');
+    src: url('https://cdn.staticmb.com/font/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.staticmb.com/font/opensans-regular-webfont.woff') format('woff'),
+         url('https://cdn.staticmb.com/font/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'opensans-bold';
+    src: url('https://cdn.staticmb.com/font/OpenSans-Bold-webfont.eot');
+    src: url('https://cdn.staticmb.com/font/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.staticmb.com/font/OpenSans-Bold-webfont.woff') format('woff'),
+         url('https://cdn.staticmb.com/font/OpenSans-Bold-webfont.ttf') format('truetype');
+   	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'opensans-semibold';
+    src: url('https://cdn.staticmb.com/font/opensans-semibold-webfont.eot');
+    src: url('https://cdn.staticmb.com/font/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.staticmb.com/font/opensans-semibold-webfont.woff') format('woff'),
+         url('https://cdn.staticmb.com/font/opensans-semibold-webfont.ttf') format('truetype');
+   	font-weight: normal;
+    font-style: normal;
+}
+</style>
+<script type="text/javascript">
+	var imgPath = "https://cdn.staticmb.com/images/";
+</script>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-492553-10', 'auto');
+ga('require', 'ecommerce');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script type="text/javascript" src="https://cdn.staticmb.com/scripts/homeGlobalNavGroup.js?04202020.120417"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticmb.com/css/pgHomePage.css?04202020.120417"/>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"465088",ustr:"",originlat:"0",clientrtt:"84",ghostip:"49.44.95.39",ipv6:true,pct:"10",clientip:"2409:4053:609:739e:2883:6bb3:5383:2cd0",requestid:"3266e3ce",region:"29145",protocol:"h2",blver:14,akM:"dsce12",akN:"ae",akTT:"O",akTX:"1",akTI:"3266e3ce",ai:"298959",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+<body class="homeIndex">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQW25Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript" src="https://cdn.staticmb.com/jsGroup/homeCityNewGroup.js?04202020.120417" defer="defer"></script>
+<script type="text/javascript" src="https://cdn.staticmb.com/jsGroup/homeOnLoadGroupOpt.js?04202020.120417"></script>
+<script type="text/javascript" src="https://cdn.staticmb.com/jsGroup/pgHomeGroup.js?04202020.120417"></script>
+
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<script type="text/javascript">
+	var allDivs = ['#advancedProperty', '#advancedProject', '#advancedBuilder', '#advancedAgent', '#advancedBuyer', '#searchByID', '#searchByKeyword'];
+	var divHeights = {'#advancedProperty': '450', '#advancedProject':'379', '#advancedBuilder':'303', '#advancedAgent':'336', '#advancedBuyer':'390', '#searchByID':'170', '#searchByKeyword':'170'};
+</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticmb.com/css/mediaQueryStyles.css?04202020.120417"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticmb.com/css/homeCityGroup.css?04202020.120417"/>
+<script type="text/javascript" src="https://cdn.staticmb.com/scripts/homeGlobalNavGroup.js?04202020.120417"></script>
+<script type="text/javascript">
+	var clientIP = "";
+</script>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<header class="main-header">
+<div class="dataContainer">
+<div class="logo">
+<a title="magicbricks.com" href="javascript:void(0);" onclick="jqPageOpen();"></a>
+</div>
+<div class="dropContainer locationDrop">
+<a href="javascript:void(0)" class="">
+New Delhi
+<span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<div class="row">
+<div class="col-sm-12">
+<div class="location_heading text-uppercase fo_13px">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent/residential-real-estate?hpr=LINK" title="INDIA" itemprop="url"><span class="location_icn" itemprop="name"></span>INDIA</a></span>
+<div class="pull-right pos_rel"><span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="/property-for-sale-rent/residential-real-estate?hpr=NRI&isNRI=y" class="topNavNRI" title="NRI Home Page" itemprop="url"><span itemprop="name">NRI Home Page</span></a> </span></div>
+</div>
+<div class="row m-b-20">
+<div class="col-sm-12">
+<div class="menu_link_heading">Popular Cities</div>
+<div class="row">
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bangalore/pg-hostels-Bangalore" title="Bangalore" itemprop="url"><span itemprop="name">Bangalore</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Mumbai/pg-hostels-Mumbai" title="Mumbai" itemprop="url"><span itemprop="name">Mumbai</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Pune/pg-hostels-Pune" title="Pune" itemprop="url"><span itemprop="name">Pune</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Chennai/pg-hostels-Chennai" title="Chennai" itemprop="url"><span itemprop="name">Chennai</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Hyderabad/pg-hostels-Hyderabad" title="Hyderabad" itemprop="url"><span itemprop="name">Hyderabad</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kolkata/pg-hostels-Kolkata" title="Kolkata" itemprop="url"><span itemprop="name">Kolkata</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ahmedabad/pg-hostels-Ahmedabad" title="Ahmedabad" itemprop="url"><span itemprop="name">Ahmedabad</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Navi-Mumbai/pg-hostels-Navi-Mumbai" title="Navi Mumbai" itemprop="url"><span itemprop="name">Navi Mumbai</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Thane/pg-hostels-Thane" title="Thane" itemprop="url"><span itemprop="name">Thane</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Noida/pg-hostels-Noida" title="Noida" itemprop="url"><span itemprop="name">Noida</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Gurgaon/pg-hostels-Gurgaon" title="Gurgaon" itemprop="url"><span itemprop="name">Gurgaon</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ghaziabad/pg-hostels-Ghaziabad" title="Ghaziabad" itemprop="url"><span itemprop="name">Ghaziabad</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Faridabad/pg-hostels-Faridabad" title="Faridabad" itemprop="url"><span itemprop="name">Faridabad</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Greater-Noida/pg-hostels-Greater-Noida" title="Greater Noida" itemprop="url"><span itemprop="name">Greater Noida</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-New-Delhi/pg-hostels-New-Delhi" title="New Delhi" itemprop="url"><span itemprop="name">New Delhi</span></a> </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="menu_link_heading">Other Cities</div>
+<div class="row">
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Agra/pg-hostels-Agra" title="Agra" itemprop="url"><span itemprop="name">Agra</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Aurangabad/pg-hostels-Aurangabad" title="Aurangabad" itemprop="url"><span itemprop="name">Aurangabad</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bhiwadi/pg-hostels-Bhiwadi" title="Bhiwadi" itemprop="url"><span itemprop="name">Bhiwadi</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bhopal/pg-hostels-Bhopal" title="Bhopal" itemprop="url"><span itemprop="name">Bhopal</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bhubaneswar/pg-hostels-Bhubaneswar" title="Bhubaneswar" itemprop="url"><span itemprop="name">Bhubaneswar</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bokaro-Steel-City/pg-hostels-Bokaro-Steel-City" title="Bokaro Steel City" itemprop="url"><span itemprop="name">Bokaro Steel City</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Chandigarh/pg-hostels-Chandigarh" title="Chandigarh" itemprop="url"><span itemprop="name">Chandigarh</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Coimbatore/pg-hostels-Coimbatore" title="Coimbatore" itemprop="url"><span itemprop="name">Coimbatore</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Dehradun/pg-hostels-Dehradun" title="Dehradun" itemprop="url"><span itemprop="name">Dehradun</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Durgapur/pg-hostels-Durgapur" title="Durgapur" itemprop="url"><span itemprop="name">Durgapur</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Goa/pg-hostels-Goa" title="Goa" itemprop="url"><span itemprop="name">Goa</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Gorakhpur/pg-hostels-Gorakhpur" title="Gorakhpur" itemprop="url"><span itemprop="name">Gorakhpur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Guntur/pg-hostels-Guntur" title="Guntur" itemprop="url"><span itemprop="name">Guntur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Guwahati/pg-hostels-Guwahati" title="Guwahati" itemprop="url"><span itemprop="name">Guwahati</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Haridwar/pg-hostels-Haridwar" title="Haridwar" itemprop="url"><span itemprop="name">Haridwar</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Indore/pg-hostels-Indore" title="Indore" itemprop="url"><span itemprop="name">Indore</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Jaipur/pg-hostels-Jaipur" title="Jaipur" itemprop="url"><span itemprop="name">Jaipur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Jamshedpur/pg-hostels-Jamshedpur" title="Jamshedpur" itemprop="url"><span itemprop="name">Jamshedpur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Jodhpur/pg-hostels-Jodhpur" title="Jodhpur" itemprop="url"><span itemprop="name">Jodhpur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kanpur/pg-hostels-Kanpur" title="Kanpur" itemprop="url"><span itemprop="name">Kanpur</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kochi/pg-hostels-Kochi" title="Kochi" itemprop="url"><span itemprop="name">Kochi</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kottayam/pg-hostels-Kottayam" title="Kottayam" itemprop="url"><span itemprop="name">Kottayam</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kozhikode/pg-hostels-Kozhikode" title="Kozhikode" itemprop="url"><span itemprop="name">Kozhikode</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Lucknow/pg-hostels-Lucknow" title="Lucknow" itemprop="url"><span itemprop="name">Lucknow</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Madurai/pg-hostels-Madurai" title="Madurai" itemprop="url"><span itemprop="name">Madurai</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Mangalore/pg-hostels-Mangalore" title="Mangalore" itemprop="url"><span itemprop="name">Mangalore</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Mysore/pg-hostels-Mysore" title="Mysore" itemprop="url"><span itemprop="name">Mysore</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Nagpur/pg-hostels-Nagpur" title="Nagpur" itemprop="url"><span itemprop="name">Nagpur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Nashik/pg-hostels-Nashik" title="Nashik" itemprop="url"><span itemprop="name">Nashik</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Navsari/pg-hostels-Navsari" title="Navsari" itemprop="url"><span itemprop="name">Navsari</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Palghar/pg-hostels-Palghar" title="Palghar" itemprop="url"><span itemprop="name">Palghar</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Patna/pg-hostels-Patna" title="Patna" itemprop="url"><span itemprop="name">Patna</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Rajahmundry/pg-hostels-Rajahmundry" title="Rajahmundry" itemprop="url"><span itemprop="name">Rajahmundry</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ranchi/pg-hostels-Ranchi" title="Ranchi" itemprop="url"><span itemprop="name">Ranchi</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Raipur/pg-hostels-Raipur" title="Raipur" itemprop="url"><span itemprop="name">Raipur</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Salem/pg-hostels-Salem" title="Salem" itemprop="url"><span itemprop="name">Salem</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Sonipat/pg-hostels-Sonipat" title="Sonipat" itemprop="url"><span itemprop="name">Sonipat</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Surat/pg-hostels-Surat" title="Surat" itemprop="url"><span itemprop="name">Surat</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Thrissur/pg-hostels-Thrissur" title="Thrissur" itemprop="url"><span itemprop="name">Thrissur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Tirupati/pg-hostels-Tirupati" title="Tirupati" itemprop="url"><span itemprop="name">Tirupati</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Trivandrum/pg-hostels-Trivandrum" title="Trivandrum" itemprop="url"><span itemprop="name">Trivandrum</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Trichy/pg-hostels-Trichy" title="Trichy" itemprop="url"><span itemprop="name">Trichy</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Udaipur/pg-hostels-Udaipur" title="Udaipur" itemprop="url"><span itemprop="name">Udaipur</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Vadodara/pg-hostels-Vadodara" title="Vadodara" itemprop="url"><span itemprop="name">Vadodara</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Vapi/pg-hostels-Vapi" title="Vapi" itemprop="url"><span itemprop="name">Vapi</span></a> </span>
+</div>
+</div>
+<div class="col-sm-12 wrap_group">
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Varanasi/pg-hostels-Varanasi" title="Varanasi" itemprop="url"><span itemprop="name">Varanasi</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Vijayawada/pg-hostels-Vijayawada" title="Vijayawada" itemprop="url"><span itemprop="name">Vijayawada</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Visakhapatnam/pg-hostels-Visakhapatnam" title="Visakhapatnam" itemprop="url"><span itemprop="name">Visakhapatnam</span></a> </span>
+</div>
+<div class="w_20_per">
+<span itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ahmadnagar/pg-hostels-Ahmadnagar" title="Ahmadnagar" itemprop="url"><span itemprop="name">Ahmadnagar</span></a> </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="headerRightCont">
+<div class="header-links groupBlock">
+<ul class="fo_14px font-type-2">
+<li class="dropContainer buyDrop " id="buyDrop"><a href="javascript:void(0)" class="dropAction" onclick="trackGaEventInGLobalNavNew('1');">Buy <span class="drop_icn"></span></a>
+<div class="dropDownBox animated col_5_plus indiaLinks">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<div class="swiper-container">
+<div class="header_link_row  swiper-wrapper">
+<div class="swiper-slide" id="staticSwiperSlider"></div>
+</div>
+<a href="javascript:void(0)" class="handle_control prev"></a>
+<a href="javascript:void(0)" class="handle_control next"></a>
+</div>
+<div class="row m-t-10">
+<div class="col-sm-12">
+<div class=" text-center globalMenuMore"><span class="font-type-4 fo_13px menuLinkViewMore ancorLink">View More</span></div>
+</div>
+</div>
+</div>
+</li>
+<li class="dropContainer rentDrop" id="rentDrop"><a href="javascript:void(0)" class="" onclick="trackGaEventInGLobalNavNew('24');">Rent <span class="drop_icn"></span></a>
+<div class="dropDownBox animated col_5_plus indiaLinks">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<div class="swiper-container">
+<div class="header_link_row  swiper-wrapper">
+<div class="swiper-slide" id="staticSwiperSliderRent">
+</div>
+</div>
+<a href="javascript:void(0)" class="handle_control prev"></a>
+<a href="javascript:void(0)" class="handle_control next"></a>
+</div>
+<div class="row m-t-10">
+<div class="col-sm-12">
+<div class=" text-center globalMenuMore"><span class="font-type-4 fo_13px menuLinkViewMore ancorLink">View More</span></div>
+</div>
+</div>
+</div>
+</li>
+<li class="dropContainer sellDrop"><a href="javascript:void(0)" class="" onclick="trackGaEventInGLobalNavNew('41');">Sell <span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<div class="row">
+<div class="col-sm-6">
+<div class="menu_link_heading">Sell a Property</div>
+<ul>
+<li><span class="text-ellipsis ancorLink pos_rel" onclick="trackThisData(); fireGAPostProperty('https://post.magicbricks.com', 'newTab');">Post your Property <sup class="bubble text-uppercase">Free</sup></span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('http://www.magicbricks.com/advertise-with-us','newTab', '41_tt_45')">Sell / Rent Ad Packages</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('http://www.magicbricks.com/bricks/packageGroup.html?Package=50881','newTab', '41_tt_75')">Till You Sell</span></li>
+</ul>
+</div>
+<div class="col-sm-6">
+<div class="menu_link_heading">Other Services</div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('http://property.magicbricks.com/prop-worth/','newTab','41_tt_43')">Find Property Value</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/Real-estate-property-agents/agent-in-New-Delhi?proptype=Multistorey-Apartment,Builder-Floor-Apartment,Penthouse,Studio-Apartment,Residential-House,Villa&category=S&price=Y&source=HomePage&tab1Agent=agent','newTab', '41_tt_44')">Find an Agent</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://magicbricks.com/bricks/packageGroup.html?Package=50883','newTab','41_tt_74')">iAdvantage</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('http://www.magicbricks.com/contactUs','newTab', '41_tt_46')">Owner Services <span class="sub_text ph_icn">+91 9870 260 930 / <span>Email Us</span></span></span></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="dropContainer adviceDrop"><a href="javascript:void(0)" class="" onmouseover="trackGaEventInGLobalNav('42');">Tools &amp; Advice <span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<div class="row">
+<div class="col-sm-3">
+<div class="menu_link_heading" onmouseover="trackGaEventInGLobalNav('9');">Resources</div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('150'); urlLinkChangeNew('https://property.magicbricks.com/microsite/buy/propindex/index.html','newTab')">PropIndex</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('151'); urlLinkChangeNew('https://www.magicbricks.com/buyers-guide/the-need-to-buy-property.html','newTab')">Buying Guide</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('60_tt_63'); urlLinkChangeNew(' https://www.magicbricks.com/hbf/New-Delhi/','newTab')">Investment Hotspots</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://property.magicbricks.com/microsite/research-insights/index.html','newTab')">Insights</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/advice/','newTab')">Tips &amp; Guides</span></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<div class="menu_link_heading" onmouseover="trackGaEventInGLobalNav('94');">Tools</div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('48'); urlLinkChangeNew('https://www.magicbricks.com/propworth/New-Delhi/','newTab')">Propworth</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/bricks/propertyRates.html?%20fromSite=mb','newTab','')">Rates &amp; Trends</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('52'); urlLinkChangeNew('https://www.magicbricks.com/advice/smart-search','newTab')">Smart Search</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('52'); urlLinkChangeNew('https://www.magicbricks.com/advice/home-loan-calculator-financial-advice?type=1001','newTab')">Home Loan Calculator</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('52'); urlLinkChangeNew('https://www.magicbricks.com/advice/buy-rent-calculator-financial-advice','newTab')">Buy vs Rent</span></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<div class="menu_link_heading" onmouseover="trackGaEventInGLobalNav('54');">Explore</div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('55'); urlLinkChangeNew('https://www.magicbricks.com/localities-in-New-Delhi','newTab')">Localities</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('56'); urlLinkChangeNew('https://www.magicbricks.com/new-projects/New-Delhi-Residential-projects','newTab')">Projects</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/developers-in-New-Delhi','newTab')">Builders</span></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<div class="menu_link_heading" onmouseover="trackGaEventInGLobalNav('95');">Discussions</div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('58'); urlLinkChangeNew('https://www.magicbricks.com/forum','newTab')">Forum</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="trackGaEventInGLobalNav('61');">Get Advice on Call
+<span class="sub_text ph_icn">0120-6866600</span></span></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="dropContainer mbOfferingDrop"><a href="javascript:void(0)" class="" onclick="trackGaEventInGLobalNavNew('60');">What's New <span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/homeloan/home','newTab','')">Home Loan</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://property.magicbricks.com/brand-store/','newTab','60_tt_69')">Developer Lounge</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://property.magicbricks.com/microsite/buy/magicbricks-on-mobile/?&utm_medium=MBSite&utm_campaign=MBChat','newTab','')">MB Chat</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://auctions.magicbricks.com/bank/home-new','newTab','60_tt_64')">Auctions</span></li>
+</ul>
+</div>
+</li>
+<li class="dropContainer newsDrop"><a href="javascript:void(0)" class="">News <span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/property-news','newTab','')">Property News</span>
+</li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/investment-tips/checklists-documents','newTab','')">Smart Cities</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/property-news/industry-buzz','newTab','')">Industry Buzz</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/expert-corner','newTab','')">Expert Corner</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/legal-taxation','newTab','')">Legal &amp; Taxation</span></li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://content.magicbricks.com/home-loan-and-insurance','newTab','')">Affordable Housing</span></li>
+</ul>
+</div>
+</li>
+<li class="dropContainer helpCenter">
+<a href="javascript:void(0)">Help <span class="drop_icn"></span></a>
+<div class="dropDownBox animated">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<ul>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://www.magicbricks.com/help','newTab','73')">Help Center</span>
+</li>
+<li><span class="text-ellipsis ancorLink" onclick="urlLinkChangeNew('https://magicbricks.com/contactUs','newTab','')">Sales Enquiry</span></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="right_link_group">
+<div class="groupBlock twoGroup">
+<div class="dropContainer getApp">
+<a href="javascript:void(0)" class="" onmouseover="trackGaEventInGLobalNav('77'); createAppDownloadGlobleNavigation('homePageAppDownload')"></a>
+<div class="dropDownBox animated" id="homePageAppDownload"></div>
+</div>
+</div>
+<div class="postProperty"><a href="javascript://" onclick="fireGAPostProperty('https://post.magicbricks.com', 'newTab');" class="font-type-4 fo_13px">Post Property<span class="badge font-type-4">Free</span></a></div>
+<ul class="buyerStrip">
+<li class="dropContainer" id="buyerDashboardNav">
+<div class="hello">
+<div class="fo_12px font-type-2 c_white" id='navUserName'>Sign in <span class="fo_12px font-type-3 c_white">My Activity</span></div>
+</div>
+<div class="dropDownBox buyerDBLink">
+<div class="dropCarotBox"><div class="carotIcon"></div></div>
+<ul>
+<li><span class="buyerLink" onclick="openBuyerDashBoard('myActivityTab','')">My Activity</span>
+<ul>
+<li id="contactedId"><span class="childBuyerLink" onclick="openBuyerDashBoard('contact','');">Contacted Properties <span class="font-type-4" id="contactedProp"></span></span></li>
+<li id="viewedId"><span class="childBuyerLink" onclick="openBuyerDashBoard('detailview','');">Properties Viewed <span class="font-type-4" id="viewedProp"></span></span></li>
+<li id="searchedId"><span class="childBuyerLink" onclick="openBuyerDashBoard('search','');">Searches <span class="font-type-4" id="searchedProp"></span></span></li>
+</ul>
+</li>
+<li><span class="buyerLink" onclick="openBuyerDashBoard('#recommendationsTab','tab');">Recommendations <span class="font-type-4" id="propRecommanded"></span></span></li>
+<li><span class="buyerLink" onclick="openBuyerDashBoard('#myProfileTab','tab');">My Profile</span></li>
+</ul>
+<div class="loginBtnWrap" id="signOutOptionCode" style="display:none; padding:0px;  min-height:35px;">
+<span onclick="urlLinkChangeNew('https://accounts.magicbricks.com/userauth/logout', 'sameTab');clearCookie();" class="signout cursorPointer">Sign Out</span>
+</div>
+<div id="userLoggedOffLi" class="loginBtnWrap">
+<span class="loginBtn" onclick="window.open('https://accounts.magicbricks.com/userauth/login', '_blank').focus(); "><span>Login</span></span>
+<p>New to Magicbricks? <span class="signup" onclick="openNextTabPage('User-Registration1');">Sign Up</span></p>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<div class="body_cover_mask"></div>
+<div class="fullScreenGray" id="fullScreenGray"></div>
+<div class="contactGlobalAlert" id="contactGlobalAlert"><span class="globalTick"></span><span class="globalContTxt">Congratulations! You've been registered on Magicbrics.com. Your password has been sent on your email ID & via SMS</span><a href="javascript:closeMe('contactGlobalAlert');">OK, GOT IT</a></div>
+<script type="text/javascript">
+var cityCodeData = '2624';
+function createAppDownloadGlobleNavigation(divId){
+	if( $('#'+divId).children('div').length === 0 ){
+	var urlStr ="/bricks/get-app-download-global-header.html";
+	$.ajax({
+		url : urlStr,
+		type: "get",
+		 async: "false",
+		success : function(result) {
+			if(result!='' && result!=null){
+				$("#"+divId).html(result);
+			}
+		}
+	});
+}
+}
+	
+function hideAppcontent(selector, cElem){
+	if( $(cElem).is(":hidden") ){
+	  $(selector).hide();
+	  $(cElem).show();
+	}
+}
+
+function readCookie(name){
+	  var ca = document.cookie.split(';');
+	  var nameEQ = name + "=";
+	  for(var i=0; i < ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0)==' ') c = c.substring(1, c.length); 
+	    if (c.indexOf(nameEQ) == 0){
+	    	retVal=c.substring(nameEQ.length, c.length);
+	    	if(name=='userTypeflSlider' && retVal.indexOf(",")>0)
+	    		return retVal.substring(0, retVal.indexOf(","));
+	    	else if(name=='userEmailflSlider'){
+		    	return retVal.replace(/^"(.*)"$/, '$1');
+		    }else if(name=='userNameflSlider'){
+		    	return retVal.replace(/^"(.\*)"$/, '$1');
+		    }
+	    	else
+	    		return retVal;
+	    }
+	   }
+	  return null;
+}
+var uuid =  readCookie("userNTrackId");
+var email = readCookie("userEmail");
+var buyerActivityCountUrl = /bricks/+"buyerActivityTimelineCount.html?id="+uuid+"&userId="+email;
+
+
+function openBuyerDashBoard(data,type) {
+  var currentLocation = window.location;
+  var location=String(currentLocation);   
+  if(location.includes("buyerDashboard")){
+   if(type.includes("tab")){
+     data=data.replaceAll("#",'');
+     activeTab(data);
+   }else{
+       onActivityClick(data);
+   }
+  } else{
+	  var urlStr = "/bricks/ajax/getBuyerDashBoardUrl.html";
+	  var url;
+	  $.ajax({
+			dataType: "json",
+			type: "get",
+			url: urlStr,
+			async: true,
+			success: function(result){
+				if(result!= null && result.url!=null){
+					url = result.url;
+				}else{
+					var uuid =  readCookie("userNTrackId");
+					url=/bricks/+"buyerDashboard.html?id="+uuid;
+					var emailId=readCookie("userEmail");
+					if(emailId!=null){
+					     url=url+"&emailId="+emailId;
+					}
+				}
+				if(type.includes("tab")){
+				       url=url+data;
+				}else{
+				   	 url=url+"&actionType="+data;
+				}
+				var win = window.open(url, '_blank');
+				win.focus();
+			}
+		});
+  }
+}
+
+function openNextTabPage(url) {
+  url=contextPath+url;
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+
+   var isBuyRentUser = false;
+   $('#buyerDashboardNav').mouseover( function(event){  
+	   updateNavigationData();  
+	   $(this).unbind(event);  
+	});
+   
+	if(isBuyRentUser){
+		//createCookie("isLoginFound", 'Y', -1);
+		document.cookie="isLoginFound=Y;path=/;domain=.magicbricks.com";
+	}
+var contextPath = '/bricks/'; 	
+function delete_cookie(a){document.cookie=a+"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;"}
+function jqPageOpen(){
+	//delete_cookie("mbRecommendationCookies");
+    window.location.href = 'https://www.magicbricks.com/';
+}
+function closeMe(id){
+	$('#'+id).hide();
+}
+
+$( document ).ready(function() {
+	
+	createStaticGlobalNavigation();
+	createStaticGlobalNavigationRent();
+	
+		function createStaticGlobalNavigation(){
+			var id = "#staticSwiperSlider";
+			var urlStr ="/bricks/staticGlobNav.html?cCg=S&cCodeData="+cityCodeData+"";
+			$.ajax({
+				dataType: "html",
+				type: "get",
+				url: urlStr,
+				cache: false,
+				async: true,
+				success: function(result){
+					$(id).html(result);
+				}
+			});
+
+		}
+		
+		function createStaticGlobalNavigationRent(){
+			var id = "#staticSwiperSliderRent";
+			var urlStr ="/bricks/staticGlobNav.html?cCg=R&cCodeData="+cityCodeData+"";
+			$.ajax({
+				dataType: "html",
+				type: "get",
+				url: urlStr,
+				cache: false,
+				async: true,
+				success: function(result){
+					$(id).html(result);
+				}
+			});
+
+		}
+	});
+</script>
+<style type="text/css">
+	.indInCd{ position: absolute; top: 90px; width: 100%; padding-left: 8px; box-sizing: border-box;}
+	.pg-ban-heading{ font-size: 24px; color: #fff; font-family: 'opensans-semibold'; padding-bottom: 4px; text-align: center;}
+	.pg-ban-list{text-align: center; }
+	.pg-ban-list ul{list-style-type: none; padding: 0px; margin: 0px;}
+	.pg-ban-list ul li{list-style-type: none; padding: 0px 32px 0px 24px; margin:0px; display: inline-block; vertical-align: top; font-size: 14px; color: #fff; font-family: 'opensans-semibold'; position: relative;}
+	.pg-ban-list ul li::before{content: ""; position: absolute; left: 0px; top:1px; width:6px; height: 12px; border-right: 2px solid #2bb700; border-bottom: 2px solid #2bb700; transform: rotate(45deg); backface-visibility:hidden;}
+	.searchBlockTitle{display: none;}
+	.sliderForColl .swiper-wrapper .swiper-slide .dhfCard a { padding:0px; background: #fff url(https://cdn.staticmb.com/images/dhf/dhf_topColLogo.svg) no-repeat 141px 16px; }
+	.sliderForColl .swiper-wrapper .swiper-slide .dhfCard a .dhfCard_l { width:132px; height:180px; display:table-cell; vertical-align:top; padding: 20px 0px 0px 20px; text-align: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;   }
+	.sliderForColl .swiper-wrapper .swiper-slide .dhfCard a .dhfCard_l .dhfCard_l_offer { line-height:20px; padding-bottom:25px; }
+	.sliderForColl .swiper-wrapper .swiper-slide .dhfCard a .dhfCard_r { width:auto; height:180px; display:table-cell; vertical-align:bottom; line-height:13px; font-style: italic; padding-bottom:15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;  }
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap,
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap * { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  }
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_video#homeVideoYouTube{ background:url(https://cdn.staticmb.com/images/homeCollectionVideoIcon.gif) no-repeat;  background-size: cover;}
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_video.forHomeCOl_videoTVC#homeVideoYouTube{ background:url(https://cdn.staticmb.com/images/tvcCollectionVideoThumbnail.png) no-repeat;  background-size: cover; width: 122px; height: 68px; margin: -11px 0px 0px -11px;}
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap { padding:12px; position:relative; cursor: default; }
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_videoCont { width:100%; height:105px; padding:0px; position:absolute; top:0px; left:0px; right:0px; bottom:0px; cursor:pointer;   }
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_video { width:110px; height:64px; padding:0px; margin:-9px 0px 0px -8px; background-color: #000; float:left;}
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_video.videoPreviewImg { width:256px; height:144px; background:url(https://cdn.staticmb.com/images/tvcCollectionVideoThumbnail.jpg) no-repeat; }
+	.sliderForColl .swiper-wrapper .swiper-slide .forHomeCOl a.forHomeCOl_videoWrap .forHomeCOl_videoTag { line-height:24px; } 
+	.videoOverlay { width:100%; height:100vh; position:fixed; top:0px; left:0px; right:0px; bottom:0px; z-index:99999; background-color:rgba(0,0,0,0.8); }
+	.modalBox_video, .modalBox_video * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	.modalBox_video { display:none; width:800px; height:450px; background-color: #000; position: fixed; z-index: 999991; left: 50%; top: 50%; margin: -225px 0px 0px -400px; border: solid 1px rgba(255, 255, 255, 0.15); border-radius:3px; }
+	.modalBox_video .video_title { width:100%; height:35px; line-height:35px; border-bottom: solid 1px rgba(255, 255, 255, 0.15); color:#ccc; font-size:14px; padding:0px 10px; }
+	.modalBox_video .modalBox_videoInner { width:100%; height:415px; padding:10px; margin:0px; }
+	.modalBox_video .modalBox_videoInner .modalBox_videoPlay { width:100%; height:100%; margin:0px; padding:0px; }
+	.modalBox_videoClose { width: 20px; height: 20px; overflow: hidden; float: right; position: relative; display: inline-block; margin-top: 7px; }
+	.modalBox_videoClose::before, .modalBox_videoClose::after { content: ''; position: absolute; height: 2px; width: 100%; top: 50%; left: 0;  margin-top: -1px; background: rgba(255,255,255,0.3); }
+	.modalBox_videoClose::before {  -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+	.modalBox_videoClose::after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+	.modalBox_videoClose.hairline::before, .modalBox_videoClose.hairline::after { height: 2px; }
+	.searchHomeOnly#homeSearchContainer .searchForm{background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 100%);}
+	.pg-home-bg-img_0{
+		background:url(https://cdn.staticmb.com/images/pg/pg-home-banner_0.png) no-repeat scroll left center / cover
+	}
+	.pg-home-bg-img_1{
+		background:url(https://cdn.staticmb.com/images/pg/pg-home-banner_1.png) no-repeat scroll left center / cover
+	}
+	.pg-home-bg-img_2{
+		background:url(https://cdn.staticmb.com/images/pg/pg-home-banner_2.png) no-repeat scroll left center / cover
+	}
+</style>
+<div class="modalBox_video" id="modalBox_video">
+<div class="video_title">India's No.1 Property Site
+<a href="javascript:void(0);" class="modalBox_videoClose hairline" onClick="closeVideoPopup('modalBox_video')"></a>
+</div>
+<div class="modalBox_videoInner">
+<div class="modalBox_videoPlay"></div>
+</div>
+</div>
+<div id="homeSearchContainer" class="searchHomeOnly">
+<div id="HeroShotTop">
+<div id="homeSearchBg" class="homeSearchBg"></div>
+</div>
+<div class="indInCd">
+<div class="pg-ban-heading">Find a Home Away from Home</div>
+<div class="pg-ban-list">
+<ul>
+<li>20,000+ Verified Listings</li>
+<li>75,000+ Unique Users</li>
+<li>300+ Details per PG</li>
+</ul>
+</div>
+</div>
+<div id="searchFormHolderDiv"></div>
+<script type="text/javascript">
+	var isSearchLoaded = false;
+	if(typeof copropType!='undefined' && copropType=='C'){
+	 loadRotatingBanner('htmlbanners.tiles',  '51197', '2624', '', 'S', '','','N', 'pgSnapShot.jsp','1', 'N','Y','HeroShotTop','homeSearchContainer','');
+	}
+	function loadHomeSearchForm(attempt){
+	 try{
+		isInclude = false;
+		if(isSearchLoaded==false){
+			var lastSearch='';
+			var mbRecommVal=readCookie('mbRecommendationCookies');
+			if(mbRecommVal!=null && mbRecommVal!='' && mbRecommVal){
+				lastSearch= mbRecommVal;
+			}
+			$.ajax({
+				dataType: "html",
+				type: "post",
+				url: "/bricks/searchForm.html?bar_city=2624&readCookie=Y&source=homeSearchForm&cssIncludeRequired=N&jsIncludeRequired=N&formVersion=F&searchTy=&isDHF=&geoCityDec=&hwCityName=&dhfRentTab=&pagename=pgSnapShot.jsp&lastSearch="+lastSearch,
+				async:false, 
+				cache: false,
+				success: function(obj){
+					if(obj){
+						$('#searchFormHolderDiv').html(obj);
+						isSearchLoaded = true;
+						// code migrated from searchForm.jsp
+						var searchType=readCookie('Type');
+						if(''!=''){
+							$('#bar_category').val('')
+						}else if(searchType && searchType!=''){
+							//Type
+							$('#bar_category').val(searchType)
+						}
+						
+						var bar_cat_val = $('#bar_category').val();
+						if(bar_cat_val=='R'){
+							if(typeof copropType!='undefined'&& copropType=='C'){
+								setTimeout(function(){
+									$('#category_rent').trigger("click");
+									$('#propType_holder_div_rent').show();
+									$('#propType_holder_div_buy').hide();
+									$('#rent_budget_holder').show();
+									$('#buy_budget_holder').hide();
+								}, 500);
+							}else{
+								$('#rentTab').click();
+							}
+							$('#keyword').attr('placeholder','Enter Landmark, Location or Society');
+						} else if(bar_cat_val==''){
+							$('#bar_category').val('S');
+						}
+						var bar_city = $('#bar_city').val();
+						if(bar_city==''){
+							$('#bar_city').val('*');
+						}
+						var bar_budgetMin = $('#bar_budgetMin').val();
+						if(bar_budgetMin==''){
+							$('#bar_budgetMin').val('-1');
+						}
+						
+						$('#propType_holder_div_rent').show();
+
+						setTimeout(function(){
+							initializeLoc('keyword');
+							addProjectsToSpan('keyword','localityName');
+							setCityOnLoadAndChange('keyword','bar_city');
+							$(".searchFormTab ul li a").removeClass("active");
+							$("#pgTab").addClass("active");
+							$("#buyBSLink").hide();
+							$("#rentBSLink").show();
+							$("#buy_budget_holder").hide();
+							$("#rent_budget_holder").show();
+						}, 500);
+						setTimeout(function(){
+							$(document).trigger('click');
+						}, 2000);
+					}
+				}
+			});
+		  }
+		 }catch(e){
+			if(!(typeof window.errorHandler === 'undefined')){
+				errorHandler('homeSearchInclude.jsp', 'loadHomeSearchForm:attempt:'+attempt, e);
+			}
+		}
+	}
+	loadHomeSearchForm('1');
+	
+	// Hero Shot Banneralert()
+	
+	$(window).load(function(){ 
+		loadHomeSearchForm('2');
+	});
+	
+	function pad(s) { return (s < 10) ? '0' + s : s; }
+	
+	</script>
+<div class="buyNRentBlock commercialBlock">
+<div class="collectionNPosition homeCollection">
+<div id="homePgSlider" class="hiddenAnim showContainer active">
+<div class="sliderForColl swiper-container homePgSwiper">
+<div id="homeForPg" class="swiper-wrapper">
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&prefTenant=17022" target="_blank">
+<div class="colBlockIcon studentFriendly"></div>
+<div class="colMText">Student-friendly PGs</div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&prefTenant=17021" target="_blank">
+<div class="colBlockIcon pgForProfesstional"></div>
+<div class="colMText">PGs for Professionals </div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&food=Y" target="_blank">
+<div class="colBlockIcon pgWithMeal"></div>
+<div class="colMText">PGs with Meals Included</div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&occupancy=16011" target="_blank">
+<div class="colBlockIcon pgSingleRoom"></div>
+<div class="colMText">Single Room PGs</div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&postedBY=16951" target="_blank">
+<div class="colBlockIcon pgManagedByOwner"></div>
+<div class="colMText">PGs Managed by Owners</div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="forHomeCOl card_shadow">
+<a href="https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y" target="_blank">
+<div class="colBlockIcon pgBudgetFrindly"></div>
+<div class="colMText">Budget Friendly PGs</div>
+<div class="calShowLink">Explore Now <span></span></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="arrow swiper-button-next"><a href="#"><span></span></a></div>
+<div class="arrow swiper-button-prev"><a href="#"><span></span></a></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var appendOverlay =  ("<div class='videoOverlay'></div>");
+var getCollectionVideoURL = $(".forHomeCOl_video iframe").attr("src");
+function openVideoPopup(id) {
+	$("body, html").css("overflow", "hidden");
+	$("body").append(appendOverlay);
+	var getPopupHeight = $('#'+id).height()/2;
+	var getPopupWidth = $('#'+id).width()/2;
+	$('#'+id).show();
+	$(".forHomeCOl_video iframe").attr("src", "");
+	$(".forHomeCOl_video").addClass("videoPreviewImg");
+	//$(".forHomeCOl_video iframe").attr("src", "https://cdn.staticmb.com/images/topCollection_videoPic.jpg");
+	$(".modalBox_videoPlay").append('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Yxcg-wZ8EvE?rel=0&amp;showinfo=0;autoplay=1;" frameborder="0" allowfullscreen></iframe>');
+}
+
+function openVideoPopupTVC(id) {
+	$("body, html").css("overflow", "hidden");
+	$("body").append(appendOverlay);
+	var getPopupHeight = $('#'+id).height()/2;
+	var getPopupWidth = $('#'+id).width()/2;
+	$('#'+id).show();
+	$(".forHomeCOl_video iframe").attr("src", "");
+	$(".forHomeCOl_video").addClass("videoPreviewImg");
+	//$(".forHomeCOl_video iframe").attr("src", "https://cdn.staticmb.com/images/topCollection_videoPic.jpg");
+	$(".modalBox_videoPlay").append('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ztHvDyB5oZc?rel=0&amp;showinfo=0;autoplay=1;" frameborder="0" allowfullscreen></iframe>');
+}
+
+
+function closeVideoPopup(id){
+	$(".forHomeCOl_video").removeClass("videoPreviewImg");
+	//$("#homeVideoYouTube").html('<iframe width="100%" height="64" src="https://www.youtube.com/embed/Yxcg-wZ8EvE?rel=0&amp;&fs=0;modestbranding=1;autoplay=1;&mute=1;" frameborder="0" scrolling="no"></iframe>');
+	$("#homeVideoYouTube").html('');
+	//$(".forHomeCOl_video iframe").attr("src", getCollectionVideoURL);
+	$("body, html").css("overflow", "auto");
+	$(".videoOverlay").remove();
+	$('#'+id).hide();
+	$(".modalBox_videoPlay").empty();
+}
+
+function createHomeCollectionPGSwiper() {
+	var homeCollectionSwiper = new Swiper('.swiper-container.homePgSwiper', {
+		slidesPerView: 4,
+		slidesPerGroup : 4,
+		paginationClickable: true,
+		spaceBetween: 0,
+		loop : true,
+		nextButton: '#homePgSlider .swiper-button-next',
+		prevButton: '#homePgSlider .swiper-button-prev'
+	});
+	$(".homeCollection #homePgSlider .arrow").css({"opacity":"1"});
+}
+
+$(document).ready(function() {
+	
+	if($("#homeForPg .swiper-slide").length > 4) {
+		createHomeCollectionPGSwiper();
+	} else {
+		$("#homePgSlider").addClass("pgCard");
+	}
+	
+	setTimeout(function(){
+		$("#f1_container").addClass("addAnimation");
+		setTimeout(function(){
+			$("#f1_container").removeClass("addAnimation");
+		}, 5000);
+	}, 5000);
+	
+});	
+
+function scrollToDiv(){
+	var getDivTopPos = $("#topCommercialDealerTop").offset().top-55;
+	$("html,body").animate({scrollTop:getDivTopPos},300);
+}
+
+function createAppDownloadGlobleNavigation(divId){
+	if( $('#'+divId).children('div').length === 0 ){
+	var urlStr ="/bricks/get-app-download-global-header.html";
+	$.ajax({
+		url : urlStr,
+		type: "get",
+		 async: "false",
+		success : function(result) {
+			if(result!='' && result!=null){
+				$("#"+divId).html(result);
+			}
+		}
+	});
+ }
+}
+function showAppcontent(selector, cElem){
+	  $(cElem).fadeOut();
+	  $(selector).slideDown(600);
+}
+
+function fireGA(){
+	ga('send', 'event', 'Widget_Homepage',gaAction, 'Homepage');
+}
+function hideAppcontent(selector, cElem){
+	if( $(cElem).is(":hidden") ){
+	  $(selector).hide();
+	  $(cElem).show();
+	}
+}
+createAppDownloadGlobleNavigation("homePageAppDownload");
+showRentTab();
+function showRentTab(){
+	var winurl=window.location.href;
+	var pgUrlVal = winurl.indexOf("pg-hostels-");
+	if(pgUrlVal != -1){
+		$("#rentTab").trigger("onclick");
+	}
+}
+createCookie("PgPlotRedirection","Y",-1);
+
+function showRandomPgBg(){
+	var getRandomNumber = Math.floor(Math.random() * 3);
+	var bgClassName = 'pg-home-bg-img_0';
+	if(getRandomNumber == 0){
+		bgClassName = 'pg-home-bg-img_0';
+	}else if(getRandomNumber == 1){
+		bgClassName = 'pg-home-bg-img_1';
+	}else if(getRandomNumber == 2){
+		bgClassName = 'pg-home-bg-img_2';
+	}
+	$("#homeSearchBg").addClass(bgClassName);
+}
+
+showRandomPgBg();
+</script>
+<div class="com-pg">
+<div class="com-pg_container">
+<div class="com-pg_static-ban clearfix">
+<div class="com-pg_static-ban-card">
+<div class="com-pg_static-ban-icon">
+<img src="https://cdn.staticmb.com/images/pg/verified-20k-list.svg" alt="">
+</div>
+<div class="com-pg_static-ban-title">20K+ Verified Listings</div>
+<div class="com-pg_static-ban-text">Choose from thousands of 100% genuine PG homes. Single room or a shared one, we have got it all.</div>
+</div>
+<div class="com-pg_static-ban-card">
+<div class="com-pg_static-ban-icon">
+<img src="https://cdn.staticmb.com/images/pg/unique-monthly-users.svg" alt="">
+</div>
+<div class="com-pg_static-ban-title">75,000+ Unique Monthly Users</div>
+<div class="com-pg_static-ban-text">Trust us to find the right tenant for you as we have the reach that most other platforms do not.</div>
+</div>
+<div class="com-pg_static-ban-card">
+<div class="com-pg_static-ban-icon">
+<img src="https://cdn.staticmb.com/images/pg/data-30-point.svg" alt="">
+</div>
+<div class="com-pg_static-ban-title">300+ Data Points Per PG</div>
+<div class="com-pg_static-ban-text">We are here to make it easier for you to select a PG with the highest number of data points in the Industry.</div>
+</div>
+</div>
+<div class="com-pg__trending" id="trendingContainer" style="display:none;">
+<div class="com-pg__heading">Featured PG in New Delhi</div>
+<div class="trend-data clearfix" id="trendingContent">
+</div>
+</div>
+<div class="com-pg__spotlight" id="spotlightContainer" style="display:none;">
+<div class="com-pg__heading">In the Spotlight</div>
+<div id="spotlightContent">
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<div class="com-pg white-bg">
+<div class="com-pg_container">
+<div class="com-pg__collections cards-data-3 clearfix">
+<div class="com-pg__collections__left">
+<div class="com-pg__collections__mediam-text">Explore our</div>
+<div class="com-pg__collections__big-text">Handpicked Collections</div>
+<div class="com-pg__collections__mediam-text">of PG Homes</div>
+</div>
+<div class="com-pg__collections__right clearfix">
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/budget_friendly.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">Budget Friendly</div>
+</div>
+</div>
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&postedBY=16951')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/managed_by_owners.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">Managed by Owners</div>
+</div>
+</div>
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&food=Y')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/meals_included.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">Meals Included</div>
+</div>
+</div>
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&prefTenant=17022')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/for_students.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">For Students</div>
+</div>
+</div>
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&occupancy=16011')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/single_rooms.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">Single Rooms</div>
+</div>
+</div>
+<div class="com-pg__collections__item" onclick="openlink(event,'https://www.magicbricks.com/property-for-rent/residential-paying-guest?cityName=New-Delhi&verified=Y&prefTenant=17021')">
+<div class="com-pg__collections__item__img">
+<img src="https://cdn.staticmb.com/images/pg/for_professionals.png" alt="">
+</div>
+<div class="com-pg__collections__item__content">
+<div class="com-pg__collections__item__name">For Professionals</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="com-pg">
+<div class="com-pg_container">
+<div class="com-pg__popular" id="popularPgContainer" style="display:none;">
+<div class="com-pg__heading" style="padding-top: 60px;">Popular PG Homes in New Delhi</div>
+<div class="com-pg__popular-data clearfix" id="popularPgContent">
+</div>
+</div>
+<div id="mustcheckoutsectionstart"></div>
+
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<div class="com-pg__coLiving small-size" id="pgcoLiving">
+<div class="com-pg__heading">Discover Your Ideal Co-Living Space
+in New Delhi</div>
+<div class="swiper-container com-pg__coliving-data clearfix">
+<div class="swiper-wrapper">
+<div class="com-pg__coLiving__card swiper-slide nest-away" onclick="getCoWorkingSearchData(event,'/property-for-rent/residential-paying-guest?cityName=New-Delhi&pgubirfnum=14268385');">
+<div class="com-pg__coLiving__card__logo">
+<img src="https://cdn.staticmb.com/images/pg/logo-nestaway.png" alt="">
+</div>
+<div class="com-pg__coLiving__card__verified">108
+Verified PGs from Nestaway</div>
+<div class="com-pg__coLiving__card__price">
+Starting <span class="font__rs">&#8377;</span> 3,100
+</div>
+<div class="com-pg__coLiving__card__viewAll">View All</div>
+</div>
+<div class="com-pg__coLiving__card swiper-slide stanza" onclick="getCoWorkingSearchData(event,'/property-for-rent/residential-paying-guest?cityName=New-Delhi&pgubirfnum=21823883');">
+<div class="com-pg__coLiving__card__logo">
+<img src="https://cdn.staticmb.com/images/pg/logo-stanza.png" alt="">
+</div>
+<div class="com-pg__coLiving__card__verified">25
+Verified PGs from stanza</div>
+<div class="com-pg__coLiving__card__price">
+Starting <span class="font__rs">&#8377;</span> 8,000
+</div>
+<div class="com-pg__coLiving__card__viewAll">View All</div>
+</div>
+</div>
+</div>
+<div class="arrow swiper-button-next"><a href="#"><span></span></a></div>
+<div class="arrow swiper-button-prev"><a href="#"><span></span></a></div>
+</div>
+<script>
+function getCoWorkingSearchData(event,url){
+	event.preventDefault();
+	window.open('https://www.magicbricks.com' + url, '_blank');
+}
+</script>
+<div id="pgWithWifi"></div>
+</div>
+</div>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<div id="flslider"></div>
+<script type="text/javascript">
+setTimeout(function(){
+    $(".agentSlider").animate({right:"0"},500);
+}, 9500);
+
+</script>
+<div id='notification'></div>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticmb.com/css/header_footer/mb_global_footer_web.css?04202020.120417"/>
+<footer class="mb-footer">
+<div class="mb-footer__row">
+<div class="mb-footer__content-box mb-footer__main">
+<div class="mb-footer__main--col">
+<div class="mb-footer__main--title semi-bold">Real Estate in India </div>
+<nav>
+<ul>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Pune/residential-real-estate-Pune">Property in Pune</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Bhubaneswar/residential-real-estate-Bhubaneswar">Property in Bhubaneswar</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Kolkata/residential-real-estate-Kolkata">Property in Kolkata</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-New-Delhi/residential-real-estate-New-Delhi">Property in New Delhi</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ahmedabad/residential-real-estate-Ahmedabad">Property in Ahmedabad</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Ghaziabad/residential-real-estate-Ghaziabad">Property in Ghaziabad</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Coimbatore/residential-real-estate-Coimbatore">Property in Coimbatore</a> </li>
+<li><a href="https://www.magicbricks.com/property-for-sale-rent-in-Chennai/residential-real-estate-Chennai">Property in Chennai</a> </li>
+</ul>
+</nav>
+<div class="mb-footer__main--title semi-bold">New Projects in India </div>
+<nav>
+<ul>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Mumbai">New Projects in Mumbai</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Chennai">New Projects in Chennai</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Pune">New Projects in Pune</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Noida">New Projects in Noida</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Gurgaon">New Projects in Gurgaon</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Bangalore">New Projects in Bangalore</a></li>
+<li><a href="https://www.magicbricks.com/Real-estate-projects-search/ALL-RESIDENTIAL-new-project-Hyderabad">New Projects in Hyderabad</a></li>
+</ul>
+</nav>
+</div>
+<div class="mb-footer__main--col">
+<div class="">
+<span class="mb-footer__main--logo"></span>
+</div>
+<div>
+Launched in 2006, Magicbricks is India's No.1 online Property marketplace to buy, sell, and rent residential and commercial properties. Adjudged as the most preferred real estate portal in India by various independent surveys, Magicbricks offers a one-stop destination for all Property needs.
+</div>
+<div class="mb-footer__main--app-box">
+<a href="https://play.google.com/store/apps/details?id=com.timesgroup.magicbricks&amp;referrer=utm_source=MobileAppBanner" target="_blank" class="mb-footer__main__app-link android-icon" title=""></a>
+<a href="https://itunes.apple.com/us/app/magicbricks/id486328406?ls=1&amp;mt=8&amp;referrer=utm_source=MobileAppBanner" target="_blank" class="mb-footer__main__app-link ios-icon" title=""></a>
+<a href="https://www.facebook.com/magicbricks" target="_blank" title="Facebook" rel="nofollow" class="mb-footer__main__social-link facebook-icon"></a>
+<a href="https://twitter.com/magicbricks" target="_blank" title="Twitter" rel="nofollow" class="mb-footer__main__social-link twittwe-icon"></a>
+<a href="https://www.linkedin.com/groups?mostPopular=&amp;gid=2373727" target="_blank" title="Linkedin" rel="nofollow" class="mb-footer__main__social-link linkedin-icon"></a>
+<a href="https://www.youtube.com/user/magicbricksvideo" class="mb-footer__main__social-link youtube-icon" target="_blank" title="youtube MBTV"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-footer__row mb-footer--main-links">
+<div class="mb-footer__content-box">
+<nav>
+<ul>
+<li class="mb-footer__links">
+<a href="https://www.magicbricks.com/sitemap.html" title="Sitemap" target="_blank">Sitemap</a>
+</li>
+<li class="mb-footer__links">
+<a href="http://property.magicbricks.com/terms/terms.html" target="_blank" title="Terms &amp; Conditions" rel="nofollow">Terms &amp; Conditions</a>
+</li>
+<li class="mb-footer__links">
+<a href="http://property.magicbricks.com/terms/privacy-policy.html" target="_blank" title="Privacy Policy" rel="nofollow">Privacy Policy</a>
+</li>
+<li class="mb-footer__links">
+<a href="http://blog.magicbricks.com/" target="_blank">Blog</a>
+</li>
+<li class="mb-footer__links">
+<a href="https://www.magicbricks.com/careers" title="Careers" rel="nofollow" target="_blank">Careers</a>
+</li>
+<li class="mb-footer__links">
+<a href="http://property.magicbricks.com/testimonials/testimonials.htm" title="Testimonials" target="_blank">Testimonials</a>
+</li>
+<li class="mb-footer__links">
+<a href="javascript:void(0)" onclick="javascript:feedbackPopup('http://www.ceoconnect.in/feedback/onlineFeedbackForm.html?siteId=1000&seType=magicbricks.com&from='+escape(window.location.href));" rel="nofollow">Feedback</a>
+</li>
+<li class="mb-footer__links">
+<a href="https://www.magicbricks.com/mbutility/unSubEmail" rel="nofollow">Unsubscribe</a>
+</li>
+<li class="mb-footer__links">
+<a href="https://www.magicbricks.com/help/" target="_blank">Help Center</a>
+</li>
+<li class="mb-footer__links">
+<a href="https://www.magicbricks.com/contactUs" target="_blank">Sales Enquiry</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="mb-footer__row mb-footer--disclaimer">
+<div class="mb-footer__content-box">
+Disclaimer: Magicbricks Realty Services Limited is only an intermediary offering its platform to advertise properties of Seller for a Customer/Buyer/User coming on its Website and is not and cannot be a party to or privy to or control in any manner any transactions between the Seller and the Customer/Buyer/User. All the offers and discounts on this Website have been extended by various Builder(s)/Developer(s) who have advertised their products. Magicbricks is only communicating the offers and not selling or rendering any of those products or services. It neither warrants nor is it making any representations with respect to offer(s) made on the site. Magicbricks Realty Services Limited shall neither be responsible nor liable to mediate or resolve any disputes or disagreements between the Customer/Buyer/User and the Seller and both Seller and Customer/Buyer/User shall settle all such disputes without involving Magicbricks Realty Services Limited in any manner.
+</div>
+</div>
+<div class="mb-footer__row mb-footer--copyright">
+<div class="mb-footer__content-box">All trademarks, logos and names are properties of their respective owners. All Rights Reserved. &#169; Copyright 2019 Magicbricks Realty Services Limited.</div>
+</div>
+</footer>
+<div id="dataCont">
+<script type="text/javascript">
+	var SITE_DOMAIN_URL = 'https://www.magicbricks.com/bricks/';
+</script>
+<link rel="stylesheet" href="https://cdn.staticmb.com/css/compareSortList.css?04202020.120417" media="all" type="text/css"/>
+<script type="text/javascript" src="https://cdn.staticmb.com/scripts/compareSortList.js?04202020.120417" defer="defer"></script>
+<script>
+	var serverName='www.magicbricks.com';
+	if(serverName.indexOf("magicbricks")>=0){
+		serverName=".magicbricks.com";
+	}
+	var contextPath="/bricks/";
+</script>
+<div id="compareWidget">
+<div class="closeWidget" style="display:none"><span></span></div>
+<div class="widgetInner">
+<div id="widgetLoader" style="display:none">
+<div class="loaderAnimation"><span><img src="https://cdn.staticmb.com/images/mbLoader.gif" width="45" height="45" alt="Loader"/> Loading Results</span></div>
+</div>
+<div id="compareSection">
+<div class="compareContent">
+<div class="tabs">
+<ul>
+<li class="active" id="compareProjectTab">Projects</li>
+<li id="compareLocalityTab">Localities</li>
+</ul>
+<div class="clearAll"></div>
+</div>
+</div>
+<div id="compareProjects">
+<div class="widgetNSR" id="compareProjectsNSR">
+<div>You have not added any<br>Locality/Project to compare.</div>
+<p>Click on 'Add to compare' to compare.</p>
+<div class="addCompareBtn"><img width="205" height="47" alt="Add to compare" src="https://cdn.staticmb.com/images/addCompareBtn.png"></div>
+</div>
+<div id="compareProp"></div>
+<div class="compareBtn"><a href="#" id="compareProjectHref">Compare Projects</a></div>
+</div>
+<div id="compareLocalities">
+<div class="widgetNSR" id="compareLocalitiesNSR">
+<div>You have not added any<br>Locality/Project to compare.</div>
+<p>Click on 'Add to compare' to compare.</p>
+<div class="addCompareBtn"><img width="205" height="47" alt="Add to compare" src="https://cdn.staticmb.com/images/addCompareBtn.png"></div>
+</div>
+<div id="compareLocality"></div>
+<div class="compareBtn"><a href="#" id="compareLocalityHref">Compare Localities</a></div>
+</div>
+</div>
+<div id="shortlistSection">
+<div class="compareContent">
+<div class="tabs">
+<ul>
+<li class="active" id="shortlistPropertyTab">Properties</li>
+<li id="shortlistProjectTab">Projects</li>
+</ul>
+<div class="clearAll"></div>
+</div>
+</div>
+<div id="shortlistProperties">
+<div class="widgetNSR" id="shortlistPropertiesNSR">
+<div>You have not shortlisted any<br>Property/Project.</div>
+<p>Click on 'Shortlist button' to add.</p>
+<div class="addCompareBtn"><img width="151" height="47" alt="Shortlist" src="https://cdn.staticmb.com/images/shortlistedBtn.png"></div>
+</div>
+<div class="scrollContent">
+<div id="shortListProp"></div>
+</div>
+<div class="compareBtn"><a href="/bricks/savedPropertySearchResultPage.html" target="_blank">View All</a></div>
+</div>
+<div id="shortlistProjects">
+<div class="widgetNSR" id="shortlistProjectsNSR">
+<div>You have not shortlisted any<br>Property/Project.</div>
+<p>Click on 'Shortlist button' to add.</p>
+<div class="addCompareBtn"><img width="151" height="47" alt="Shortlist" src="https://cdn.staticmb.com/images/shortlistedBtn.png"></div>
+</div>
+<div class="scrollContent">
+<div id="shortListProj"></div>
+</div>
+<div class="compareBtn"><a href="/bricks/savedPropertySearchResultPage.html?activeTabValue=project" target="_blank">View All</a></div>
+</div>
+</div>
+</div>
+<div class="widgetTabs">
+<ul>
+<li class="compareTab active" id="projLocCompareData"><span class="arrowTab"></span>Compare<span class="selectedListing" id="addToCompareNumber">0</span></li>
+<li class="shortlistTab" id="propProjCompareData"><span class="arrowTab"></span>ShortList<span class="selectedListing" id="shortlistNumber">0</span></li>
+</ul>
+<div class="clearAll"></div>
+</div>
+</div>
+<script>
+
+</script>
+</div>
+<div id='_webengage_script_tag'></div>
+<script type="text/javascript">
+
+
+// Browser Notification code start -----------------------------------------------------------------------------
+
+var messageType=window.location.href;
+var notCounter='';
+var category='Genric';
+var firstScreenMsg='Instantly get notified when a new property is posted';
+var secondScreenMsg='Get latest property updates by subscribing to our Notification';
+var browserAgfent=window.navigator.userAgent;
+/* if((browserAgfent.indexOf('Firefox')!=-1) || (browserAgfent.indexOf('Chrome')!=-1) ||  (browserAgfent.indexOf('Safari')=-1))
+{
+
+
+if(messageType.indexOf("/property-for-sale/")!=-1 || (messageType.indexOf("-pppfs")!=-1)
+{
+firstScreenMsg='Be the first one to know about property deals on Magicbrick';
+secondScreenMsg='Get Updates about latest Property deals by subscribing to our Notification';
+category='Sale';
+}
+else if(messageType.indexOf("/property-for-rent/")!=-1 || messageType.indexOf("-pppfr")!=-1)
+{
+firstScreenMsg='Instantly get notified when an Owner posts a property';
+secondScreenMsg='Get Updates about Fresh Owner property by subscribing to our Notification';
+category='Rent';
+}
+
+var webpush=readCookie('webpush');
+var notificationFlag=readCookie('notificationFlag');
+var mainwin;
+var intervalId = setInterval(function() {
+ webpush=readCookie('webpush');
+ var webpushCookie=readCookie('webpushCookie');
+		 if(webpush!=null && webpush!=webpushCookie)
+		 {
+		 
+		 	webpush=readCookie('webpush');
+notificationFlag=readCookie('notificationFlag');
+		 clearInterval(intervalId);
+				          if(webpush!=null)
+								{
+								try{	
+									var rawDataObject = ntrack.getRawDataObject();
+										rawDataObject.trackingEvent = ntrack.trackingEvent.BrowserNotification;
+										rawDataObject.Source = ntrack.Source.Web;
+										rawDataObject.rid=webpush;
+										rawDataObject.EventActivityType = ntrack.EventActivityType.Others;
+										
+									    try {
+									        rawDataObject.psm = Search_Param_Maps['psmid'];
+									        rawDataObject.preferred_psm = Search_Param_Maps['psmid'];
+									    } catch (err) {
+									       console.log('error occured while fetching PSMId..');
+								        }
+										ntrack.sendRamTrackEvent(rawDataObject);
+									}catch(e){
+										console.log(e);
+									}
+								
+								}
+        					createCookieNotification("webpushCookie",webpush,0);
+        					}
+    }, 5000);
+   
+setTimeout(function(){  
+   if((webpush=='' || webpush==null) && (notificationFlag==null || notificationFlag==''))
+{
+var notCounter=readCookie('notificationCounter');
+if(notCounter==null || notCounter=='')
+{
+notCounter=1;
+createCookieNotification("notificationCounter",notCounter,24);
+openNotification();
+}
+else
+{
+notCounter=parseInt(notCounter)+1;
+if(parseInt(notCounter)<3)
+{
+createCookieNotification("notificationCounter",notCounter,0);
+openNotification();
+}
+else
+{
+createCookieNotification("notificationFlag","N",0);
+eraseCookie("notificationCounter");
+}
+
+}
+} 
+ 
+}, 15000);
+}*/   
+// Browser Notification code end -----------------------------------------------------------------------------
+var pagename='pgSnapShot.jsp';
+if(pagename != null && pagename!='propertySearchResult.jsp'){
+	dataLayer.push({'event':'all_pages_except_property_search'});
+}else{
+	dataLayer.push({'event':'property_searchresult_page_load'});
+}
+
+
+function loadAdvancedJS(){
+	if(!(typeof isPostProperty === "undefined") && isPostProperty)		
+		loadScript('https://www.magicbricks.comhttps://cdn.staticmb.com/scripts/dwrGroup.js', true);
+	
+	loadScript('https://cdn.staticmb.com/scripts/multiselecthome.js', true);
+	loadScript('https://cdn.staticmb.com/scripts/advancedSearch.js', true);
+	loadScript('https://cdn.staticmb.com/scripts/search.js', true);
+}
+function loadAdvancedProjJs(){
+	loadScript('https://cdn.staticmb.com/scripts/autoSuggession.js', true);
+	loadAdvancedJS();
+}
+
+
+
+</script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+	    var browserAgfent=window.navigator.userAgent;
+	    var messageType=window.location.href;
+		var contextPath = "/bricks/";
+		var comScoreUrlPath = 'https://www.magicbricks.com/bricks/';
+		var jsPath = 'https://cdn.staticmb.com/scripts/';
+		var userType="null";
+		var name="null";
+		var emailid="null";
+		var mobile="null";
+		var userMobileCountry="null";
+		var contact_url = 'https://www.magicbricks.com'+'/bricks/getPropertyContactForm.html?action=1&id=';
+	//	var contact_url_pg = 'http://localhost:8083/propertyDetail/pgcontact?';
+		var contact_url_pg = 'https://www.magicbricks.com'+'/propertyDetail/pgcontact?';
+		// Google Analytics
+		var _gaq = _gaq || [];
+		// Comscore
+		var _comscore = _comscore || [];
+		if((emailid!='' && emailid!='null') || (mobile!='' && mobile!='null')){
+			setCookieForMailer(userType, name, emailid, mobile, userMobileCountry);
+		}
+		loadRotatingBanner('htmlbanners.tiles', '51288', '2624', '', '', '2624','2624','N', 'pgSnapShot.jsp','2', 'N','N','trendingContent','trendingContainer');
+		loadRotatingBanner('htmlbanners.tiles', '51289', '2624', '', '', '2624','2624','N', 'pgSnapShot.jsp','1', 'N','N','spotlightContent','spotlightContainer');
+		loadRotatingBanner('htmlbanners.tiles', '51290', '2624', '', '', '2624','2624','N', 'pgSnapShot.jsp','4', 'N','N','popularPgContent','popularPgContainer');
+		
+		var getHandpickedCardLength = $(".com-pg__collections__item").length;
+
+		if(getHandpickedCardLength > 3){
+			$(".com-pg__collections").removeClass("cards-data-3");
+		}
+		
+		function openPgContact(id) {
+			url = contact_url + id + '&contactType=property&trackParam=AM-Contact&propTrackingRequired=Map';
+			html = '<div class="propContactGreyBoxOverlay"></div>';
+			html += '<div class="propContactGreyBox" style="z-index:1000;">';
+			html += '<div class="closeConSec"><div class="closeConIcon" onclick="closeContactForm();" style="display: block;"></div></div>';
+			html += '<iframe src="' + url
+					+ '" style="border:0px; width:100%; height:575px;"></iframe>';
+			html += '</div>';
+			$('body').append(html);
+		}
+		
+		function openlink(event, url) {
+			 window.open(url, '_blank');
+		}
+		
+		function nestAwayProperty(ct){
+			var url = "/bricks/ajax/findpropertyPgSearch.html?rows=3&pgubirfnum=Y&ct="+ct+"";
+			$.ajax({
+			    dataType: "html",
+			    type: "get",
+			    url: url,
+			    async: false,
+			    success: function(data) {
+			    	$('#mustcheckoutsectionstart').html(data);
+			    }
+			});
+		}
+		
+		function pgWithWifiProperty(ct){
+			var url = "/bricks/ajax/findpropertyPgSearch.html?rows=4&wifi=Y&city="+ct+"";
+			$.ajax({
+			    dataType: "html",
+			    type: "get",
+			    url: url,
+			    async: false,
+			    success: function(data) {
+			    	$('#pgWithWifi').html(data);
+			    }
+			});
+		}
+		var cityCode = '2624';
+		nestAwayProperty(cityCode);
+		pgWithWifiProperty(cityCode)
+		// https://testqc.magicbricks.com/propertyDetail/pgcontact
+		// ?pgid=4182grade2&exe=PgIframe&interface=pgcontactint&page=iframe&button=source
+		function openPgContact(id,exe,interfaceObj,page,button,adv) {
+			url = contact_url_pg  + 'pgid='+id+'&exe='+exe+'&interface='+interfaceObj+'&page='+page+'&button='+button+'&mobile=N';
+			if(adv){
+				url =  url + "&adv="+adv;
+			}
+			html = '<div class="propContactGreyBoxOverlay"></div>';
+			html += '<div class="propContactGreyBox" style="z-index:1000;">';
+			html += '<div class="closeConSec"><div class="closeConIcon" onclick="closeContactForm();" style="display: block;"></div></div>';
+			html += '<iframe src="' + url
+					+ '" style="border:0px; width:100%; height:575px;"></iframe>';
+			html += '</div>';
+			$('body').append(html);
+		}
+
+		function closeContactForm(){
+			$(".propContactGreyBoxOverlay").remove();
+			$(".propContactGreyBox").remove();
+		}
+		
+		function fireUrl(event,url){
+			event.preventDefault();
+			var fullurl = 'https://www.magicbricks.com' +"/propertyDetail/"+ url;
+			window.open(fullurl, '_blank');
+			//window.location = 'https://www.magicbricks.com' +"/propertyDetail/"+ url;
+		}
+
+		function pgcoLivingSwiper() {
+			var pgcoLiving = new Swiper('.swiper-container.com-pg__coliving-data', {
+				slidesPerView: 4,
+				slidesPerGroup : 4,
+				paginationClickable: true,
+				spaceBetween: 16,
+				loop : false,
+				nextButton: '#pgcoLiving .swiper-button-next',
+				prevButton: '#pgcoLiving .swiper-button-prev'
+			});
+		}
+
+		pgcoLivingSwiper();
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"257384380","applicationTime":65,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"aa0a53fc69","transactionName":"b1YGN0ZVDUUFAERcWVYcNxNGXQ1RJwxeQURXXwgGRhsTUScMZ1pEU1oKBBpcF1sIQxhyc2wa","agent":"","errorBeacon":"bam.nr-data.net"}</script></body>
+</html>
